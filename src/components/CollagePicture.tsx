@@ -1,17 +1,29 @@
-import React, {CSSProperties} from "react";
+import React, {CSSProperties, useState, useEffect} from "react";
 
 interface CollagePictureProps {
     background?: CSSProperties;
     src: string;
     textOrder: CSSProperties;
     imageOrder: CSSProperties;
-    title?: string;
-    text?: string;
-    date?: string;
+    title: string;
+    text: string;
+    date: string;
 }
 
 const CollagePicture: React.FC<CollagePictureProps> = ( {background, src, textOrder, imageOrder, title, text, date}: CollagePictureProps ) => {
-  return (
+
+
+        const [textContent, setTextContent] = useState<string>('');
+    
+        useEffect(() => {
+          // Fetch the file from the public folder
+          fetch(text)
+            .then((response) => response.text())
+            .then((text) => setTextContent(text))
+            .catch((error) => console.error('Error reading file:', error));
+        }, []);
+  
+    return (
    <div className="collage-container">
         <div className="collage-bar" style={{...background, order: 1}}>
 
@@ -21,7 +33,7 @@ const CollagePicture: React.FC<CollagePictureProps> = ( {background, src, textOr
         </div>
         <div className="collage-text" style={{...textOrder}}>
             <h1>{title}</h1>
-            <p>{text}</p>
+            <p>{textContent}</p>
         </div>
         <div className="collage-pic" style={{...imageOrder}}>
             <img src={src} alt="Memory 1" />
