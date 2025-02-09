@@ -5,6 +5,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #FF98bc;
+  margin: 20px;
 }
 
 .App {
@@ -96,11 +97,12 @@ body {
 .collage-text {
   background: whitesmoke;
   margin: 20px;
+  padding: 15px;
+  flex-grow: 10;
 }
 
 .collage-text > h1 {
   text-align: center;
-  flex-grow: 2;
 }
 
 .collage-pic {
@@ -109,11 +111,10 @@ body {
   margin-right: auto;
   text-align: center;
   flex-grow: 1;
-  background-color: red;
 }
 
 .collage-pic > img {
-  width: 200px;
+  width: 180px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -130,17 +131,4 @@ body {
   50% { transform: rotate(0deg); }
   75% { transform: rotate(-5deg); }
   100% { transform: rotate(0deg); }
-}
-
-figcaption {
-  font-size: 20px;
-  background-color: cornsilk;
-  padding: 8px;
-  border-radius: 20px;
-  text-align: center;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-figcaption:hover {
-  transform: scale(1.1);
 }
