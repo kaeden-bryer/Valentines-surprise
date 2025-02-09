@@ -1,32 +1,25 @@
 import React from 'react';
+import CollagePicture from './CollagePicture';
 
 const CollagePage: React.FC = () => {
   return (
-    <div className="collage-page">
-      <h1>💖Our Memories✨</h1>
-      <div className="collage">
+    <>
+      <div className="collage-page">
 
-        <div className="collage-pic">
-            <img src="/dogfilter.jpg" alt="Memory 1" width="300px" />
-            <figcaption>Suspiciously couple</figcaption>
-        </div>
-        <div className="collage-pic">
-            <img src="/carmirror.jpg" alt="Memory 2" width="300px"/>
-            <figcaption>First time to Beulah !</figcaption>
-        </div>
-        <div className="collage-pic">
-            <img src="/toronto.jpg" alt="Memory 3" width="300px"/>
-            <figcaption>Toronto !</figcaption>
-        </div>
+        <h1>💖Our Memories✨</h1>
 
+        <CollagePicture 
+          background={{ background: 'linear-gradient(to bottom, red, orange)' }}
+          // image
+          // title
+          // date
+        />
+        <CollagePicture background={{ background: 'linear-gradient(to bottom, orange, yellow)' }}/>
+        <br />
 
-        {/* Add more images as needed */}
+        <a href="/" className="back-link">Back to Letter</a>
       </div>
-
-
-      <br />
-      <a href="/" className="back-link">Back to Letter</a>
-    </div>
+    </>
   );
 };
 
