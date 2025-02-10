@@ -1,1 +1,2 @@
-Here is the placeholder for my text for carmirror.txt
+Here is the placeholder for my text for carmirror.txt. I have to ensure I type enough for each
+caption, otherwise it will mess up the sizing of the bar.

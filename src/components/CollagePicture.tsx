@@ -1,8 +1,9 @@
 import React, {CSSProperties, useState, useEffect} from "react";
 
+
 interface CollagePictureProps {
     background?: CSSProperties;
-    src: string;
+    image: string;
     textOrder: CSSProperties;
     imageOrder: CSSProperties;
     title: string;
@@ -10,7 +11,7 @@ interface CollagePictureProps {
     date: string;
 }
 
-const CollagePicture: React.FC<CollagePictureProps> = ( {background, src, textOrder, imageOrder, title, text, date}: CollagePictureProps ) => {
+const CollagePicture: React.FC<CollagePictureProps> = ( {background, image, textOrder, imageOrder, title, text, date}: CollagePictureProps ) => {
 
 
         const [textContent, setTextContent] = useState<string>('');
@@ -36,7 +37,7 @@ const CollagePicture: React.FC<CollagePictureProps> = ( {background, src, textOr
             <p>{textContent}</p>
         </div>
         <div className="collage-pic" style={{...imageOrder}}>
-            <img src={src} alt="Memory 1" />
+            <img src={image} alt="Memory 1" />
         </div>
     </div>
     )
