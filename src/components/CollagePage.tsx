@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import CollagePicture from './CollagePicture';
 import data from '../data/data.json';
 
