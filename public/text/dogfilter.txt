@@ -1,0 +1,2 @@
+Here is some sample text. If I can read text from files, then I'm ready to start making my json file.
+Then I can expand this website to house as many pictures as I'd like.

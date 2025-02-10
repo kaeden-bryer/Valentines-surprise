@@ -15,7 +15,7 @@ const LetterBox: React.FC = () => {
         {!isOpen ? (
           <div className="heart-box" onClick={handleOpenBox}>
             <img
-              src="/heartbox.png" // Path to the heart image in the public folder
+              src="/images/heartbox.png" // Path to the heart image in the public folder
               alt="Heart"
               className="heart-image"
             />
