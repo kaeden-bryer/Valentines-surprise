@@ -1,6 +1,7 @@
 import React from 'react';
 import CollagePicture from './CollagePicture';
 import data from '../data/data.json';
+import Milestone from './Milestone';
 
 interface data {
   background: string;
@@ -60,6 +61,8 @@ const CollagePage: React.FC = () => {
         {rows}
 
         <br />
+
+        < Milestone text="Present Date" />
 
         <a href="/" className="back-link">Back to Letter</a>
       </div>
