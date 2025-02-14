@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom";
+import BackgroundMusic from "./BackgroundMusic";
 
 const Lyrics: React.FC = () => {
     return (
@@ -23,6 +24,8 @@ const Lyrics: React.FC = () => {
                 <p>Look up to the sky</p>
                 <p>Hold your hand in mind</p>
                 <br />
+
+                <BackgroundMusic />
                 
                 <Link to="/" className="back-link">Back to the beginning</Link>
             </div>

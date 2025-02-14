@@ -2,6 +2,7 @@ import React from 'react';
 import CollagePicture from './CollagePicture';
 import data from '../data/data.json';
 import Milestone from './Milestone';
+import BackgroundMusic from './BackgroundMusic';
 
 interface data {
   background: string;
@@ -194,6 +195,8 @@ const CollagePage: React.FC = () => {
         <div className="link-container">
           <a href="/lyrics" className="back-link">Take me to the Lyrics</a>
         </div>
+
+        <BackgroundMusic />
         
       </div>
     </>
