@@ -1,0 +1,17 @@
+{
+    "rewrites": 
+        [
+            {
+                "source": "/(.*)",
+                "destination": "/"
+            },
+            {
+                "source": "/collage",
+                "destination": "/collage"
+            },
+            {
+                "source": "/lyrics",
+                "destination": "/lyrics"
+            }
+        ]
+}
