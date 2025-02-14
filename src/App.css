@@ -93,7 +93,8 @@ body {
 .collage-date {
   display: flex;
   width: 120px;
-  font-family:'Times New Roman', Times, serif;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
   align-items: flex-start;
   justify-content: flex-start;
 }
@@ -103,6 +104,7 @@ body {
   margin: 20px;
   padding: 15px;
   width: 100%;
+  font-size: 18px;
 }
 
 .collage-text > h1 {
@@ -153,7 +155,8 @@ body {
   font-size: 20px;
   text-align: center;
   background-color: pink;
-  padding: 20px;
+  padding: 40px;
   border-radius: 8px;
   width: 40vw;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
