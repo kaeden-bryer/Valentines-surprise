@@ -33,7 +33,7 @@
             "title": "IKEA/Slide Day",
             "text": "/text/Ikea.txt",
             "date": "Jan 23'",
-            "orientation": "portrait"
+            "orientation": "landscape"
         },
         {
             "image": "/images/CartonWater.jpg",
@@ -103,7 +103,7 @@
             "title": "First Cooking Date",
             "text": "/text/Peppers.txt",
             "date": "May 23'",
-            "orientation": "portrait"
+            "orientation": "landscape"
         },
         {
             "image": "/images/KatyPerry.jpg",
@@ -138,14 +138,14 @@
             "title": "Drummond Year 1",
             "text": "/text/DrummondYear1.txt",
             "date": "July 23'",
-            "orientation": "portrait"
+            "orientation": "landscape"
         },
         {
             "image": "/images/CopsnDonuts.jpg",
             "title": "Cops and Donuts",
             "text": "/text/CopsnDonuts.txt",
             "date": "July 23'",
-            "orientation": "portrait"
+            "orientation": "landscape"
         },
         {
             "image": "/images/C&DJail.jpg",
@@ -173,7 +173,7 @@
             "title": "Arctic Monkeys Concert",
             "text": "/text/ArcticMonkeys.txt",
             "date": "Aug 23'",
-            "orientation": "portrait"
+            "orientation": "landscape"
         },
         {
             "image": "/images/Clowns.jpg",
@@ -194,7 +194,7 @@
             "title": "Avenue after ZooBoo",
             "text": "/text/Avenue.txt",
             "date": "Oct 23'",
-            "orientation": "portrait"
+            "orientation": "landscape"
         },
         {
             "image": "/images/UnoTower.jpg",
@@ -229,7 +229,7 @@
             "title": "First Time Up to Beulah",
             "text": "/text/FirstTimeBeulah.txt",
             "date": "Feb 24'",
-            "orientation": "portrait"
+            "orientation": "landscape"
         },
         {
             "image": "/images/Hubby.jpg",
@@ -271,14 +271,14 @@
             "title": "Roller Rink Date",
             "text": "/text/RollerRink.txt",
             "date": "June 24'",
-            "orientation": "portrait"
+            "orientation": "landscape"
         },
         {
             "image": "/images/FirstWebsite.jpg",
             "title": "Kaeden's First Website",
             "text": "/text/FirstWebsite.txt",
             "date": "June 24'",
-            "orientation": "portrait"
+            "orientation": "landscape"
         },
         {
             "image": "/images/Toronto.jpg",
@@ -334,7 +334,7 @@
             "title": "Back to School Frat Party",
             "text": "/text/FirstFrat.txt",
             "date": "Sept 24'",
-            "orientation": "portrait"
+            "orientation": "landscape"
         },
         {
             "image": "/images/CedarPointTired.jpg",
@@ -348,7 +348,7 @@
             "title": "Julia's 20th Birthday!",
             "text": "/text/Julia20.txt",
             "date": "Oct 24'",
-            "orientation": "portrait"
+            "orientation": "landscape"
         },
         {
             "image": "/images/GLScavenger.jpg",

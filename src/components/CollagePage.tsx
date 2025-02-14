@@ -69,7 +69,7 @@ const CollagePage: React.FC = () => {
     }
 
     if (picture.orientation === "landscape") {
-      width = {width: "300px"};
+      width = {width: "400px"};
     } else {
       width = {width: "180px"};
     }
