@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 
 const BackgroundMusic: React.FC = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Toggle play/pause
