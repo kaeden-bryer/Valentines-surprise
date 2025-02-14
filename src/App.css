@@ -108,12 +108,7 @@ body {
 .collage-pic {
   display: inline-block;
   text-align: center;
-  flex-grow: 1;
   margin: 20px;
-}
-
-.collage-pic > img {
-  width: 180px;
 }
 
 .collage-pic > img:hover {
@@ -146,5 +141,5 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 40px;
+  font-size: 28px;
 }

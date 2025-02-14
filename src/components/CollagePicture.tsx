@@ -9,9 +9,10 @@ interface CollagePictureProps {
     title: string;
     text: string;
     date: string;
+    orientation: CSSProperties;
 }
 
-const CollagePicture: React.FC<CollagePictureProps> = ( {background, image, textOrder, imageOrder, title, text, date}: CollagePictureProps ) => {
+const CollagePicture: React.FC<CollagePictureProps> = ( {background, image, textOrder, orientation, imageOrder, title, text, date}: CollagePictureProps ) => {
 
 
         const [textContent, setTextContent] = useState<string>('');
@@ -37,7 +38,7 @@ const CollagePicture: React.FC<CollagePictureProps> = ( {background, image, text
             <p>{textContent}</p>
         </div>
         <div className="collage-pic" style={{...imageOrder}}>
-            <img src={image} alt="Memory 1" />
+            <img src={image} style={{...orientation}} alt="Memory 1" />
         </div>
     </div>
     )

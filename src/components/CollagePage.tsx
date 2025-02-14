@@ -12,6 +12,7 @@ interface Picture {
   title: string;
   date: string;
   text: string;
+  orientation: string;
 }
 
 
@@ -25,6 +26,7 @@ const CollagePage: React.FC = () => {
 
     let textOrder: React.CSSProperties;
     let imageOrder: React.CSSProperties;
+    let width: React.CSSProperties;
 
 
     if (i % 2 === 0) {
@@ -37,6 +39,12 @@ const CollagePage: React.FC = () => {
       imageOrder = { order: 3};
     }
 
+    if (picture.orientation === "landscape") {
+      width = {width: "300px"};
+    } else {
+      width = {width: "180px"};
+    }
+
     rows.push(
       <CollagePicture 
         image= {picture.image}
@@ -45,6 +53,7 @@ const CollagePage: React.FC = () => {
         imageOrder = {imageOrder}
         date = {picture.date}
         text = {picture.text}
+        orientation = {width}
       />
     );
     console.log("adding picture");

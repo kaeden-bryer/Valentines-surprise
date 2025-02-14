@@ -4,13 +4,29 @@
             "image": "/images/dogfilter.jpg",
             "title": "Our First Date",
             "text": "/text/dogfilter.txt",
-            "date": "Feb 22'"
+            "date": "Feb 22'",
+            "orientation": "portrait"
         },
         {
-            "image": "/images/carmirror.jpg",
+            "image": "/images/Toronto.jpg",
             "title": "Toronto trip!",
-            "text": "/text/carmirror.txt",
-            "date": "June 24'"
+            "text": "/text/Toronto.txt",
+            "date": "June 24'",
+            "orientation": "portrait"
+        },
+        {
+            "image": "/images/Thrifting.jpg",
+            "title": "Our First Date",
+            "text": "/text/dogfilter.txt",
+            "date": "Feb 22'",
+            "orientation": "portrait"
+        },
+        {
+            "image": "/images/SavvySliders.jpg",
+            "title": "Toronto trip!",
+            "text": "/text/Toronto.txt",
+            "date": "June 24'",
+            "orientation": "landscape"
         }
     ]
 }

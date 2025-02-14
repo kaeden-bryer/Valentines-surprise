@@ -8,7 +8,7 @@ const Milestone: React.FC<MilestoneProps> = ({ text }) => {
     
     return (
         <div className="header-container">
-            <img src="/images/fancy-header.png" width="60%" />
+            <img src="/images/fancy-header.png" width="40%" />
             <div className="milestone-text">{text}</div>
         </div>
     )
