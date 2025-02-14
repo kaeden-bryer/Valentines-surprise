@@ -18,7 +18,12 @@ interface Picture {
 
 const CollagePage: React.FC = () => {
   
-  const rows: JSX.Element[] = [];
+  const rows2022: JSX.Element[] = [];
+  const rows2023: JSX.Element[] = [];
+  const rowsOfficial: JSX.Element[] = [];
+  const rows2024: JSX.Element[] = [];
+  const rowsOakland: JSX.Element[] = [];
+  const rows2025: JSX.Element[] = [];
 
   let i = 0;
   let colorIndex = 0;
@@ -69,18 +74,88 @@ const CollagePage: React.FC = () => {
       width = {width: "180px"};
     }
 
-    rows.push(
-      <CollagePicture 
-        image= {picture.image}
-        title = {picture.title}
-        textOrder = {textOrder}
-        imageOrder = {imageOrder}
-        date = {picture.date}
-        text = {picture.text}
-        orientation = {width}
-        background = {background}
-      />
-    );
+    if (i < 4) {
+      rows2022.push(
+        <CollagePicture 
+          image= {picture.image}
+          title = {picture.title}
+          textOrder = {textOrder}
+          imageOrder = {imageOrder}
+          date = {picture.date}
+          text = {picture.text}
+          orientation = {width}
+          background = {background}
+        />
+      );
+    } else if (i < 6 && i >= 4) {
+      rows2023.push(
+        <CollagePicture 
+          image= {picture.image}
+          title = {picture.title}
+          textOrder = {textOrder}
+          imageOrder = {imageOrder}
+          date = {picture.date}
+          text = {picture.text}
+          orientation = {width}
+          background = {background}
+        />
+      );
+    } else if (i < 31 && i >= 6) {
+      rowsOfficial.push(
+        <CollagePicture 
+          image= {picture.image}
+          title = {picture.title}
+          textOrder = {textOrder}
+          imageOrder = {imageOrder}
+          date = {picture.date}
+          text = {picture.text}
+          orientation = {width}
+          background = {background}
+        />
+      );
+    } else if (i < 46 && i >= 31) {
+      rows2024.push(
+        <CollagePicture 
+          image= {picture.image}
+          title = {picture.title}
+          textOrder = {textOrder}
+          imageOrder = {imageOrder}
+          date = {picture.date}
+          text = {picture.text}
+          orientation = {width}
+          background = {background}
+        />
+      );
+    } else if (i < 55 && i >= 46) {
+      rowsOakland.push(
+        <CollagePicture 
+          image= {picture.image}
+          title = {picture.title}
+          textOrder = {textOrder}
+          imageOrder = {imageOrder}
+          date = {picture.date}
+          text = {picture.text}
+          orientation = {width}
+          background = {background}
+        />
+      );
+    } else {
+      rows2025.push(
+        <CollagePicture 
+          image= {picture.image}
+          title = {picture.title}
+          textOrder = {textOrder}
+          imageOrder = {imageOrder}
+          date = {picture.date}
+          text = {picture.text}
+          orientation = {width}
+          background = {background}
+        />
+      );
+    }
+    
+
+
     console.log("adding picture");
     i++;
 });
@@ -92,17 +167,27 @@ const CollagePage: React.FC = () => {
 
         <h1>💖Our Memories✨</h1>
 
-        {rows}
+        {rows2022}
 
         < Milestone text="2023" />
 
+        {rows2023}
+
         < Milestone text="Officially Dating" />
+
+        {rowsOfficial}
 
         < Milestone text="2024" />
 
+        {rows2024}
+
         < Milestone text="At Oakland Together" />
 
+        {rowsOakland}
+
         < Milestone text="2025" />
+
+        {rows2025}
 
         < Milestone text="Present Date" />
 
