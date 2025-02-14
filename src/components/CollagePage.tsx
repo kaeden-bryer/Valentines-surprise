@@ -73,7 +73,10 @@ const CollagePage: React.FC = () => {
 
         < Milestone text="Present Date" />
 
-        <a href="/" className="back-link">Back to Letter</a>
+        <div className="link-container">
+          <a href="/lyrics" className="back-link">Take me to the Lyrics</a>
+        </div>
+        
       </div>
     </>
   );
