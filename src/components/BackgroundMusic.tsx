@@ -5,16 +5,6 @@ const BackgroundMusic: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Toggle play/pause
-  const togglePlay = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
 
   // Automatically start playing when the component mounts
   useEffect(() => {
