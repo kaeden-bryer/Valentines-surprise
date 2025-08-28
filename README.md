@@ -1,54 +1,16 @@
-# React + TypeScript + Vite
-
 ## For my love, Julia
 
-A surprise website housing a collage of all our memories. For our two year anniversary
+A surprise website housing a collage of all our memories. For our two year anniversary.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This was my first personal project, and I was still quite unfamiliar with what I was doing at the time. I'm very happy with how it turned out, but it's not suitable for scaling.
 
-Currently, two official plugins are available:
+All the data is stored in data.json, each entry with references to a folder of pictures and a folder of text that contain a picture and text file for each entry named exactly the same.
+For example, I might have toronto.jpg and also toronto.txt. Then, the pictures in between each milestone marker are separate arrays, because I didn't know how to add the milestone markers
+in between entries. Both of these examples illustrate how this website would be painful to scale.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Instead, I'm going to use a SQLite database to store all entries. I'll have to do some homework, but this will be a rewarding investment. Additionally, I want to make it easier to add future entries. To this end, I'm going to create an "add entry" page that is password protected so that only me and Julia can add entries.
 
-## Expanding the ESLint configuration
+Other fixes should be made too, perhaps regarding sizing photos appropriately. I think using TailwindCSS would also make this repo more maintainable. At least, coming from an Angular perspective, putting everything inside App.css is it's own kind of hell.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Time to get to work!
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
