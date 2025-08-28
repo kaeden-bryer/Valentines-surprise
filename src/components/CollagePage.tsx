@@ -26,7 +26,7 @@ const CollagePage: React.FC = () => {
   const rowsOakland: JSX.Element[] = [];
   const rows2025: JSX.Element[] = [];
 
-  let i = 0;
+  let pictureNum = 0;
   let colorIndex = 0;
 
   data.Pictures.forEach((picture: Picture) => {
@@ -34,32 +34,13 @@ const CollagePage: React.FC = () => {
     let textOrder: React.CSSProperties;
     let imageOrder: React.CSSProperties;
     let width: React.CSSProperties;
-    let background: React.CSSProperties = { background: "linear-gradient(to bottom, red, orange)" };
+    let background: React.CSSProperties;
 
-    if (colorIndex == 0){
-      background = {background: "linear-gradient(to bottom, red, orange"};
-      colorIndex++;
-    } else if (colorIndex == 1){
-      background = {background: "linear-gradient(to bottom, orange, yellow"};
-      colorIndex++;
-    } else if (colorIndex == 2){
-      background = {background: "linear-gradient(to bottom, yellow, lightgreen"}; 
-      colorIndex++;
-    } else if (colorIndex == 3){ 
-      background = {background: "linear-gradient(to bottom, lightgreen, lightblue"};
-      colorIndex++;
-    } else if (colorIndex == 4){
-      background = {background: "linear-gradient(to bottom, lightblue, blue"};
-      colorIndex++;
-    } else if (colorIndex == 5){
-      background = {background: "linear-gradient(to bottom, blue, purple"};
-      colorIndex++;
-    } else if (colorIndex == 6){
-      background = {background: "linear-gradient(to bottom, purple, red"};
-      colorIndex = 0;
-    }
+    // get background color
+    background = getGradientColor(colorIndex);
+    colorIndex = (colorIndex + 1) % 7;
 
-    if (i % 2 === 0) {
+    if (pictureNum % 2 === 0) {
       // add textOrder = 3, imageOrder = 4
       textOrder = { order: 3};
       imageOrder = { order: 4};
@@ -69,13 +50,11 @@ const CollagePage: React.FC = () => {
       imageOrder = { order: 3};
     }
 
-    if (picture.orientation === "landscape") {
-      width = {width: "400px"};
-    } else {
-      width = {width: "180px"};
-    }
+    // get image width based on orientation
+    width = getImageWidth(picture.orientation);
 
-    if (i < 4) {
+    // this is just terrible and will require a database to fix
+    if (pictureNum < 4) {
       rows2022.push(
         <CollagePicture 
           image= {picture.image}
@@ -88,7 +67,7 @@ const CollagePage: React.FC = () => {
           background = {background}
         />
       );
-    } else if (i < 6 && i >= 4) {
+    } else if (pictureNum < 6 && pictureNum >= 4) {
       rows2023.push(
         <CollagePicture 
           image= {picture.image}
@@ -101,7 +80,7 @@ const CollagePage: React.FC = () => {
           background = {background}
         />
       );
-    } else if (i < 31 && i >= 6) {
+    } else if (pictureNum < 31 && pictureNum >= 6) {
       rowsOfficial.push(
         <CollagePicture 
           image= {picture.image}
@@ -114,7 +93,7 @@ const CollagePage: React.FC = () => {
           background = {background}
         />
       );
-    } else if (i < 46 && i >= 31) {
+    } else if (pictureNum < 46 && pictureNum >= 31) {
       rows2024.push(
         <CollagePicture 
           image= {picture.image}
@@ -127,7 +106,7 @@ const CollagePage: React.FC = () => {
           background = {background}
         />
       );
-    } else if (i < 55 && i >= 46) {
+    } else if (pictureNum < 55 && pictureNum >= 46) {
       rowsOakland.push(
         <CollagePicture 
           image= {picture.image}
@@ -155,8 +134,38 @@ const CollagePage: React.FC = () => {
       );
     }
     
-    i++;
+    pictureNum++;
 });
+
+function getGradientColor(colorIndex: number): React.CSSProperties {
+  switch (colorIndex){
+    case 0:
+      return {background: "linear-gradient(to bottom, red, orange"};
+    case 1:
+      return {background: "linear-gradient(to bottom, orange, yellow"};
+    case 2:
+      return {background: "linear-gradient(to bottom, yellow, lightgreen"};
+    case 3:
+      return {background: "linear-gradient(to bottom, lightgreen, lightblue"};
+    case 4:
+      return {background: "linear-gradient(to bottom, lightblue, blue"};
+    case 5:
+      return {background: "linear-gradient(to bottom, blue, purple"};
+    case 6:
+      return {background: "linear-gradient(to bottom, purple, red"};
+    default:
+      return {background: "linear-gradient(to bottom, black, white"};
+  }
+}
+
+// update this in the future to not require an orientation string
+function getImageWidth(orientation: string): React.CSSProperties {
+  if (orientation === "landscape") {
+    return {width: "400px"};
+  } else {
+    return {width: "180px"};
+  }
+}
 
   return (
     <>
