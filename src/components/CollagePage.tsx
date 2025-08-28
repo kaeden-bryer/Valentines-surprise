@@ -155,12 +155,8 @@ const CollagePage: React.FC = () => {
       );
     }
     
-
-
-    console.log("adding picture");
     i++;
 });
-
 
   return (
     <>
