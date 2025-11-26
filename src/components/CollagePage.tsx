@@ -173,6 +173,10 @@ function getImageWidth(orientation: string): React.CSSProperties {
 
         <h1>💖Our Memories✨</h1>
 
+        <div className="link-container">
+          <a href="/editMemory" className="back-link">Test Edit Component</a>
+        </div>
+
         {rows2022}
 
         < Milestone text="2023" />
