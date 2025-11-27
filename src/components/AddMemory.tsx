@@ -170,12 +170,41 @@ const AddMemory: React.FC = () => {
 
             // Redirect to database test page after 1.5 seconds
             setTimeout(() => {
-                navigate('/database-test');
+                navigate('/collage');
             }, 1500);
 
         } catch (err) {
             console.error(`Error ${isEditMode ? 'updating' : 'adding'} memory:`, err);
             setError(err instanceof Error ? err.message : `Failed to ${isEditMode ? 'update' : 'add'} memory`);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleDelete = async () => {
+        if (!confirm('Are you sure you want to delete this memory? This action cannot be undone.')) {
+            return;
+        }
+
+        try {
+            setLoading(true);
+            setError(null);
+
+            const { error: deleteError } = await supabase
+                .from('memories')
+                .delete()
+                .eq('key', memoryId);
+
+            if (deleteError) throw deleteError;
+
+            console.log('Memory deleted successfully');
+            
+            // Redirect immediately after deletion
+            navigate('/collage');
+
+        } catch (err) {
+            console.error('Error deleting memory:', err);
+            setError(err instanceof Error ? err.message : 'Failed to delete memory');
         } finally {
             setLoading(false);
         }
@@ -273,11 +302,23 @@ const AddMemory: React.FC = () => {
                         <button type="submit" disabled={loading || fetchingData} className="submit-btn">
                             {loading ? (isEditMode ? 'Updating...' : 'Adding...') : (isEditMode ? 'Update Memory' : 'Add Memory')}
                         </button>
-                        <Link to="/database-test" className="cancel-link">
+                        <Link to="/collage" className="cancel-link">
                             Cancel
                         </Link>
                     </div>
                 </form>
+
+                {isEditMode && (
+                    <div className="delete-section">
+                        <button 
+                            onClick={handleDelete} 
+                            disabled={loading || fetchingData} 
+                            className="delete-memory-btn"
+                        >
+                            Delete Memory
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
     );
