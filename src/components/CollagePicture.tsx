@@ -1,4 +1,5 @@
 import React, {CSSProperties, useState, useEffect} from "react";
+import { Link } from 'react-router-dom';
 
 
 interface CollagePictureProps {
@@ -9,21 +10,31 @@ interface CollagePictureProps {
     title: string;
     text: string;
     date: string;
-    orientation: CSSProperties;
+    memoryKey?: number;
 }
 
-const CollagePicture: React.FC<CollagePictureProps> = ( {background, image, textOrder, orientation, imageOrder, title, text, date}: CollagePictureProps ) => {
+const CollagePicture: React.FC<CollagePictureProps> = ( {background, image, textOrder, imageOrder, title, text, date, memoryKey}: CollagePictureProps ) => {
 
 
         const [textContent, setTextContent] = useState<string>('');
     
         useEffect(() => {
-          // Fetch the file from the public folder
-          fetch(text)
-            .then((response) => response.text())
-            .then((text) => setTextContent(text))
-            .catch((error) => console.error('Error reading file:', error));
-        }, []);
+          // Check if text is a file path (starts with / or contains .txt) or direct text
+          if (text.startsWith('/') || text.includes('.txt')) {
+            // Fetch the file from the public folder
+            fetch(text)
+              .then((response) => response.text())
+              .then((text) => setTextContent(text))
+              .catch((error) => {
+                console.error('Error reading file:', error);
+                // If fetch fails, use the text directly
+                setTextContent(text);
+              });
+          } else {
+            // Use the text directly (from database)
+            setTextContent(text);
+          }
+        }, [text]);
   
     return (
    <div className="collage-container">
@@ -34,11 +45,16 @@ const CollagePicture: React.FC<CollagePictureProps> = ( {background, image, text
             <p>–{date}</p>
         </div>
         <div className="collage-text" style={{...textOrder}}>
+            {memoryKey && (
+                <Link to={`/add-memory?id=${memoryKey}`} className="edit-icon-btn">
+                    <img src="/images/edit.png" alt="Edit" />
+                </Link>
+            )}
             <h1>{title}</h1>
             <p>{textContent}</p>
         </div>
         <div className="collage-pic" style={{...imageOrder}}>
-            <img src={image} style={{...orientation}} alt="Memory 1" />
+            <img src={image} alt="Memory 1" />
         </div>
     </div>
     )
